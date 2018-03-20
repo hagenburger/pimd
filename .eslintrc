@@ -1,3 +1,17 @@
 {
-  "extends": "standard"
+  "extends": "standard",
+  "overrides": [
+    {
+      "files": "*.test.js",
+      "globals": {
+        "describe": true,
+        "expect": true,
+        "it": true,
+        "unindent": true
+      },
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
 }
