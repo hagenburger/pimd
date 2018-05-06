@@ -1,15 +1,15 @@
 const Document = require('../lib/document')
 
 describe('Rendering documents', () => {
-  it('should output the input', () => {
-    const input = `
+  it('should render HTML out of Markdown', () => {
+    const input = unindent`
       # Test
     `
-    const output = `
-      # Test
+    const output = unindent`
+      <h1.*?>Test</h1>
     `
-    const doc = new Document(unindent(input))
+    const doc = new Document(input)
     const html = doc.render()
-    expect(html).to.equal(unindent(output))
+    expect(html).to.match(new RegExp(output))
   })
 })
