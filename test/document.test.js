@@ -5,12 +5,11 @@ describe('Rendering documents', () => {
     const input = unindent`
       # Test
     `
-    const output = unindent`
-      <h1.*?>Test</h1>
-    `
     const doc = new Document(input)
     const html = doc.render()
-    expect(html).to.match(new RegExp(output))
+    expect(html)
+      .to.have.selector('h1')
+      .with.text.to.equal('Test')
   })
 })
 
@@ -51,7 +50,9 @@ describe('Code blocks', () => {
     testBothCodeBlockTypes(input, (input) => {
       const doc = new Document(input)
       const html = doc.render()
-      expect(html).to.match(/<pre><code[^>]*>\s*My code/)
+      expect(html)
+        .to.have.selector('pre > code')
+        .with.text.to.equal('My code')
     })
   })
 
@@ -64,7 +65,9 @@ describe('Code blocks', () => {
     testBothCodeBlockTypes(input, (input) => {
       const doc = new Document(input)
       const html = doc.render()
-      expect(html).to.match(/<pre><code[^>]+class="[^"]*lang-html[^"]*"[^>]*>\s*&lt;p&gt;My code/)
+      expect(html)
+        .to.have.selector('pre > code.lang-html')
+        .with.text.to.match(/<p>My code<\/p>/)
     })
   })
 
@@ -77,7 +80,9 @@ describe('Code blocks', () => {
     testBothCodeBlockTypes(input, (input) => {
       const doc = new Document(input)
       const html = doc.render()
-      expect(html).to.match(/<pre><code[^>]+class="[^"]*lang-html[^"]*"[^>]*>\s*&lt;p&gt;My code/)
+      expect(html)
+        .to.have.selector('pre > code.lang-html')
+        .with.text.to.match(/<p>My code<\/p>/)
     })
   })
 
@@ -90,7 +95,9 @@ describe('Code blocks', () => {
     testBothCodeBlockTypes(input, (input) => {
       const doc = new Document(input)
       const html = doc.render()
-      expect(html).to.match(/<pre><code[^>]+class="[^"]*lang-html[^"]*"[^>]*>\s*&lt;p&gt;My code/)
+      expect(html)
+        .to.have.selector('pre > code.lang-html')
+        .with.text.to.match(/<p>My code<\/p>/)
     })
   })
 })
