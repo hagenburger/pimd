@@ -17,6 +17,13 @@ describe('Rendering of fragments', () => {
     const html = fragment.render()
     expect(html).to.have.selector('p.test')
   })
+
+  it('should render more than one root element', () => {
+    const fragment = new Fragment()
+    fragment.dom.innerHTML = '<div></div><span></span><p></p>'
+    const html = fragment.render()
+    expect(html).to.have.selector('div + span + p')
+  })
 })
 
 describe('Instance hooks', () => {
