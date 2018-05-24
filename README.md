@@ -1,5 +1,7 @@
 # PIMD
 
+<img src="https://travis-ci.org/hagenburger/pimd.svg?branch=master" alt="Build status (Travis CI)">
+
 Processing instructions for Markdown.
 
 
