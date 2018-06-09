@@ -25,6 +25,6 @@
   },
   "dependencies": {
     "jsdom": "^11.10.0",
-    "marked": "^0.3.17"
+    "markdown-it": "^8.4.1"
   }
 }

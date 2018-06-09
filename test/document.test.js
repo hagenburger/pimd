@@ -105,18 +105,18 @@ describe('Code blocks', () => {
 
 describe('options', () => {
   it('should respect options', () => {
-    const input = '```\nX\n```'
+    const input = '<hr>'
 
     const config1 = new Config()
-    config1.markedOptions.gfm = true
+    config1.markdown.html = true
     let doc1 = new Document(input, config1)
     let html1 = doc1.render()
-    expect(html1).to.have.selector('pre')
+    expect(html1).to.have.selector('hr')
 
     const config2 = new Config()
-    config2.markedOptions.gfm = false
+    config1.markdown.html = false
     const doc2 = new Document(input, config2)
     const html2 = doc2.render()
-    expect(html2).not.have.selector('pre')
+    expect(html2).not.have.selector('hr')
   })
 })
