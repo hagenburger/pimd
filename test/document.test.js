@@ -138,4 +138,68 @@ describe('processing instructions', () => {
       .to.have.selector('p + p')
       .with.text.to.equal('Line 2')
   })
+
+  it('should call defined processing instructions', () => {
+    const input = unindent`
+      Line 1
+
+      <?pi1?>
+
+      <?pi2?>
+
+      Line 2
+    `
+    const config = new Config()
+    config.commands['pi1'] = () => '<h1>PI1</h1>'
+    config.commands['pi2'] = () => '<h2>PI2</h2>'
+
+    let doc = new Document(input, config)
+    let html = doc.render()
+    expect(html)
+      .to.have.selector('h1')
+      .with.text.to.equal('PI1')
+    expect(html)
+      .to.have.selector('h2')
+      .with.text.to.equal('PI2')
+  })
+
+  it('should call defined processing instructions', () => {
+    const input = unindent`
+      Line 1
+
+      <?up test?>
+
+      Line 2
+    `
+    const config = new Config()
+    config.commands['up'] = (pi) => '<h1>' + pi.content.toUpperCase() + '</h1>'
+
+    let doc = new Document(input, config)
+    let html = doc.render()
+    expect(html)
+      .to.have.selector('h1')
+      .with.text.to.equal('TEST')
+  })
+
+  it('should call defined processing instructions and create DOM', () => {
+    const input = unindent`
+      Line 1
+
+      <?up3 lorem?>
+
+      Line 2
+    `
+    const config = new Config()
+    config.commands['up3'] = (pi) => {
+      const el = pi.renderer.dom.window.document.createElement('h3')
+      el.textContent = pi.content
+      pi.dom.appendChild(el)
+    }
+
+    let doc = new Document(input, config)
+    let html = doc.render()
+    expect(html)
+      .to.have.selector('h3')
+      .with.text.to.equal('lorem')
+  })
 })
