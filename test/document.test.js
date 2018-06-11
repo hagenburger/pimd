@@ -120,3 +120,22 @@ describe('options', () => {
     expect(html2).not.have.selector('hr')
   })
 })
+
+describe('processing instructions', () => {
+  it('should not output anything for empty processing instructions', () => {
+    const input = unindent`
+      Line 1
+
+      <? ?>
+
+      Line 2
+    `
+
+    let doc = new Document(input)
+    let html = doc.render()
+    expect(html).to.match(/<\/p><p>/)
+    expect(html)
+      .to.have.selector('p + p')
+      .with.text.to.equal('Line 2')
+  })
+})
