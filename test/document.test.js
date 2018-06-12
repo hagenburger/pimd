@@ -202,4 +202,22 @@ describe('processing instructions', () => {
       .to.have.selector('h3')
       .with.text.to.equal('lorem')
   })
+
+  it('should call defined processing instructions inline and create DOM', () => {
+    const input = unindent`
+      Line 1 <?strongandup lorem?>.
+    `
+    const config = new Config()
+    config.commands['strongandup'] = (pi) => {
+      const el = pi.renderer.dom.window.document.createElement('strong')
+      el.textContent = pi.content.toUpperCase()
+      pi.dom.appendChild(el)
+    }
+
+    let doc = new Document(input, config)
+    let html = doc.render()
+    expect(html)
+      .to.have.selector('p strong')
+      .with.text.to.equal('LOREM')
+  })
 })
