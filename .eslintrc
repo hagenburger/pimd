@@ -2,7 +2,7 @@
   "extends": "standard",
   "overrides": [
     {
-      "files": "*.test.js",
+      "files": ["*.test.js", "test.js"],
       "globals": {
         "describe": true,
         "expect": true,

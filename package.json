@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "test": "mocha ./test/*.test.js ./test/**/*.test.js --require ./test/setup"
+    "test": "mocha ./test/*.test.js ./test/**/*.test.js ./plugins/*/test.js --require ./test/setup"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-standard": "^3.0.1",
+    "lerna": "^2.11.0",
     "mocha": "^5.0.4",
     "sinon": "^6.0.0",
     "sinon-chai": "^3.1.0"

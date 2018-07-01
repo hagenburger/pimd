@@ -1,5 +1,7 @@
+plugins/
 test/
 test.js
 *.test.js
 .travis.yml
 .eslintrc
+lerna.json
