@@ -1,19 +1,18 @@
 {
-    "name": "@pimd/preview-plugin",
-    "version": "0.0.0",
-    "description": "Adds a preview (live HTML) to code blocks.",
-    "main": "index.js",
-    "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
-    "keywords": [
-      "markdown",
-      "pimd-plugin"
-    ],
-    "publishConfig": {
-      "access": "public"
-    },
-    "license": "MIT",
-    "devDependencies": {
-      "pimd": "^0.0.0"
-    }
+  "name": "@pimd/preview-plugin",
+  "version": "0.1.0",
+  "description": "Adds a preview (live HTML) to code blocks.",
+  "main": "index.js",
+  "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
+  "keywords": [
+    "markdown",
+    "pimd-plugin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "pimd": "^0.1.0"
   }
-  
+}
