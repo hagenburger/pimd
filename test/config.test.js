@@ -29,3 +29,17 @@ describe('Info strings', () => {
       .to.have.selector('div[id="id1232124"]')
   })
 })
+
+describe('Pluings', () => {
+  it('should load plugins', () => {
+    const testFunction = function (pi) {
+      return 'Plugin loaded'
+    }
+    const plugin = function (config) {
+      config.commands['plugintest'] = testFunction
+    }
+    const config = new Config()
+    config.use(plugin)
+    expect(config.commands).to.include(testFunction)
+  })
+})
