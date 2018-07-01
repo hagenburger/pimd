@@ -36,6 +36,30 @@ describe('Meta information', () => {
   })
 })
 
+describe('Content', () => {
+  it('should add CSS and JavaScript', (done) => {
+    const input = unindent`
+      # Test
+    `
+    const doc = new Document(input)
+    doc.contents.add('css', 'a { text-decoration: none; }')
+    doc.contents.add('css', 'p { color: blue; }')
+    doc.contents.add('javascript', 'alert("Hello world!")')
+    doc.renderDocument().then((html) => {
+      expect(html)
+        .to.have.selector('html > head > style')
+        .with.text.to.include('a { text-decoration: none; }')
+      expect(html)
+        .to.have.selector('html > head > style')
+        .with.text.to.include('p { color: blue; }')
+      expect(html)
+        .to.have.selector('html > head > script')
+        .with.text.to.include('alert("Hello world!")')
+      done()
+    })
+  })
+})
+
 describe('Code blocks', () => {
   const testBothCodeBlockTypes = (input, callback) => {
     callback(input)
