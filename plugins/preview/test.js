@@ -1,4 +1,4 @@
-const {Document} = require('pimd')
+const {Document} = require('../..')
 const plugin = require('.')
 
 describe('Info strings', () => {
