@@ -127,6 +127,18 @@ describe('Code blocks', () => {
   })
 })
 
+describe('Info strings on non-code elements', () => {
+  const config = new Config()
+  const foo = sinon.spy()
+  config.addInfoStringParser(/foo/, foo)
+  const input = unindent`
+    # Hello world <?: foo ?>
+  `
+  const doc = new Document(input, config)
+  doc.render()
+  expect(foo).to.have.been.called
+})
+
 describe('options', () => {
   it('should respect options', () => {
     const input = '<hr>'
