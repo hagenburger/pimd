@@ -1,0 +1,18 @@
+{
+  "name": "@pimd/classes-plugin",
+  "version": "0.0.0",
+  "description": "Adds classes to HTML elements",
+  "main": "index.js",
+  "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
+  "keywords": [
+    "markdown",
+    "pimd-plugin"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "pimd": "^0.0.0"
+  }
+}
