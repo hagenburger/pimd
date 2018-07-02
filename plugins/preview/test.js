@@ -2,7 +2,7 @@ const {Document} = require('../..')
 const plugin = require('.')
 
 describe('Info strings', () => {
-  it('should add a class to a headline', () => {
+  it('should add an HTML preview to the example', () => {
     const input = unindent`
       ~~~ html +preview
       <p>Example</p>
