@@ -139,7 +139,7 @@ describe('Info strings on non-code elements', () => {
   expect(foo).to.have.been.called
 })
 
-describe('options', () => {
+describe('Options', () => {
   it('should respect options', () => {
     const input = '<hr>'
 
@@ -157,7 +157,7 @@ describe('options', () => {
   })
 })
 
-describe('processing instructions', () => {
+describe('Processing instructions', () => {
   it('should not output anything for empty processing instructions', () => {
     const input = unindent`
       Line 1
