@@ -3,4 +3,3 @@ module.exports = function (config) {
     this.element.id = id
   })
 }
-
