@@ -11,7 +11,7 @@ describe('Info strings', () => {
     const doc = new Document(input)
     doc.config.use(plugin)
     const html = doc.render()
-    
+
     expect(html)
       .to.have.selector('.pimd-example > .pimd-preview > p')
       .with.text.to.equal('Example')
