@@ -1,9 +1,12 @@
 {
   "name": "@pimd/id-plugin",
   "version": "0.1.0",
-  "description": "Adds ids to HTML elements",
+  "description": "Adds IDs to HTML elements",
   "main": "index.js",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
+  "contributors": ["Violeta R. <artnerdnet@gmail.com> (https://twitter.com/artnerdnet)",
+    "Diana Vile (https://github.com/dianavile)",
+    "Tobi (https://github.com/tobmaster)"],
   "keywords": [
     "markdown",
     "pimd-plugin"
