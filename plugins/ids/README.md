@@ -1,6 +1,6 @@
-# PIMD Classes Plugin
+# PIMD IDs Plugin
 
-Adds HTML ids to code blocks and other elements.
+Adds HTML IDs to code blocks and other elements.
 
 
 ## Example usage
