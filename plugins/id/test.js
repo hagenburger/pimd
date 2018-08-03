@@ -34,7 +34,7 @@ describe('ID-plugin', () => {
     doc.config.use(plugin)
     const html = doc.render()
     expect(html)
-    .to.have.selector('div#my-id')
+      .to.have.selector('div#my-id')
   })
 
   it('should add an id to a table', () => {
