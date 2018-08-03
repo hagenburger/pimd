@@ -1,6 +1,5 @@
-const {Document} = require('../..');
-const plugin = require('.');
-
+const {Document} = require('../..')
+const plugin = require('.')
 
 describe('Info strings', () => {
   it('should add an id to a headline', () => {
@@ -10,7 +9,7 @@ describe('Info strings', () => {
     const doc = new Document(input)
     doc.config.use(plugin)
     const html = doc.render()
-      expect(html)
+    expect(html)
       .to.have.selector('h1#myid')
   })
 
