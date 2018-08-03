@@ -46,10 +46,7 @@ describe('ID-plugin', () => {
     const doc = new Document(input)
     doc.config.use(plugin)
     const html = doc.render()
-
     expect(html)
       .to.have.selector('p#td-id')
   })
-
 })
-
