@@ -38,7 +38,7 @@ describe('ID-plugin', () => {
   })
 
   it('should add an id to a table', () => {
-    const input = unindent `
+    const input = unindent`
       | Table <?: #th-id ?>      | Table                    |
       |-- -- -- -- -- -- -- -- --|-- -- -- -- -- -- -- -- --|
       | Table                    | Table <?: #td-id ?>      |
