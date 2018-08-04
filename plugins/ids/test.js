@@ -26,7 +26,6 @@ describe('Info strings', () => {
       .to.have.selector('div#myid')
   })
 
-  
   it('should add an id to a table', () => {
     const input = unindent`
       | Table <?: #th-id ?>      | Table                    |
@@ -39,5 +38,4 @@ describe('Info strings', () => {
     expect(html)
       .to.have.selector('p#td-id')
   })
-  
 })
