@@ -25,4 +25,19 @@ describe('Info strings', () => {
     expect(html)
       .to.have.selector('div#myid')
   })
+
+  
+  it('should add an id to a table', () => {
+    const input = unindent`
+      | Table <?: #th-id ?>      | Table                    |
+      |-- -- -- -- -- -- -- -- --|-- -- -- -- -- -- -- -- --|
+      | Table                    | Table <?: #td-id ?>      |
+    `
+    const doc = new Document(input)
+    doc.config.use(plugin)
+    const html = doc.render()
+    expect(html)
+      .to.have.selector('p#td-id')
+  })
+  
 })
