@@ -1,0 +1,12 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "plugins/classes/package.json",
+        "plugins/ids/package.json",
+        "plugins/preview/package.json"
+      ]
+    }
+  }
+}
