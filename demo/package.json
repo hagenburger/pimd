@@ -1,0 +1,19 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pimd": "file:../pimd"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bro": "^1.0.3",
+    "gulp-connect": "^5.5.0"
+  }
+}
