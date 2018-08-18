@@ -1,0 +1,18 @@
+var { Document } = require('pimd');
+
+const button = document.getElementById("button");
+button.addEventListener('click',  function(e) {
+        e.preventDefault();
+        var contentString = document.getElementById("myInput").value;  
+        console.log(contentString);  
+        const result = convertWithPimd(contentString);   
+        console.log('result', result);
+    }
+);
+
+
+function convertWithPimd(input){
+    const pimd = new Document(input);
+    const renderedString = pimd.render();
+    return renderedString;
+}
