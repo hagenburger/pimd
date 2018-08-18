@@ -1,11 +1,16 @@
 var { Document } = require('pimd');
 
-    var contentString = document.getElementById("myInput").value;
+const userInput = document.getElementById("myInput");
+userInput.addEventListener('input',  function(e) {
+    e.preventDefault();
+    const contentString = document.getElementById("myInput").value;  
+    convertWithPimd(contentString);
+}
+);
 
-    function main(){
+function convertWithPimd(contentString) {
     const pimd = new Document(contentString);
     const renderedString = pimd.render();
-    console.log('Rendered string', renderedString);
-    document.getElementById('inputParsed').innerHTML += renderedString;
-    }
-    main();
+    let placer = document.getElementById("inputParsed");
+    placer.innerHTML = renderedString;
+};

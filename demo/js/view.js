@@ -1,26 +1,21 @@
 const View = {
     init: function() {
         
-    const inputBox = document.getElementById('textBox');
-    const inputForm = document.getElementById('inputForm');
-    const parsedContent = document.getElementById('container');
+  //  const parsedContent = document.getElementById('container');
 
     this.inputForm.addEventListener('submit',  (e) => {
         e.preventDefault();
-        controller.searchByUsername(this.inputBox.value); // ?
-        this.parsedContent.innerHTML = ''; // ? 
+        let contentToParse = document.getElementById('myInput').value;
+        console.log(contentToParse)
     },
     true
     );
     this.render();
 
 
+    },
+
+    render: function() {
+        pimd.main();
     }
 }
-
-
-
-
-const inputBoxContent = document.getElementById('textBox').value;
-
-

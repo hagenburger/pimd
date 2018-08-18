@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pimd": "file:../pimd"
+    "pimd": "file:.."
   },
   "devDependencies": {
     "gulp": "^3.9.1",

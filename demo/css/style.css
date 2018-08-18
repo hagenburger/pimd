@@ -1,16 +1,17 @@
 html, body {
     height: 100%;
     margin: 0;
-};
+}
 
 #container {
     display: flex;  
     margin: 0;
-};
+}
 
 #parserDiv {
     flex-flow: row nowrap;
     justify-content: center;
+    display: flex;
 }
 
 #markdownInput {
@@ -18,8 +19,7 @@ html, body {
     width: 30%;
 }
 
-#renderedMarkdown{
-    
+#renderedMarkdown {
     background-color: peachpuff;
     width: 30%;
 }
