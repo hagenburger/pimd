@@ -1,6 +1,6 @@
 # PIMD
 
-<img src="https://travis-ci.org/hagenburger/pimd.svg?branch=master" alt="Build status (Travis CI)">
+<img src="https://travis-ci.org/hagenburger/pimd.svg?branch=master" alt="Build status (Travis CI)"> <img src="https://badges.greenkeeper.io/hagenburger/pimd.svg" alt="Dependency status (Greenkeeper)">
 
 **P**rocessing **I**nstructions for **M**ark**D**own.
 
