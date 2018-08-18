@@ -26,19 +26,19 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.1.2",
-    "eslint": "^5.2.0",
+    "eslint": "^5.4.0",
     "eslint-config-standard": "^12.0.0-alpha.0",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^6.0.0",
-    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "lerna": "^2.11.0",
     "mocha": "^5.0.4",
-    "sinon": "^6.0.0",
+    "sinon": "^6.1.5",
     "sinon-chai": "^3.1.0"
   },
   "dependencies": {
-    "jsdom": "^11.10.0",
-    "markdown-it": "^8.4.1"
+    "jsdom": "^11.12.0",
+    "markdown-it": "^8.4.2"
   }
 }
