@@ -24,6 +24,14 @@
     "generator"
   ],
   "license": "MIT",
+  "greenkeeper": {
+    "commitMessages": {
+      "dependencyUpdate": "Update ${dependency} to version ${version}",
+      "devDependencyUpdate": "Update ${dependency} to version ${version}",
+      "dependencyPin": "Pin ${dependency} to ${oldVersion}",
+      "devDependencyPin": "Pin ${dependency} to ${oldVersion}"
+    }
+  },
   "devDependencies": {
     "chai": "^4.1.2",
     "eslint": "^5.4.0",
