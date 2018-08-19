@@ -1,8 +1,8 @@
-const Config = require('../lib/config')
-const Fragment = require('../lib/fragment')
+const Config = require("../lib/config")
+const Fragment = require("../lib/fragment")
 
-describe('Info strings', () => {
-  it('should parse simple info strings', () => {
+describe("Info strings", () => {
+  it("should parse simple info strings", () => {
     const infoString = 'test1 test2="my value"'
     const config = new Config()
     const test1Func = sinon.spy()
@@ -12,31 +12,30 @@ describe('Info strings', () => {
 
     config.parseInfoString(infoString, {})
 
-    expect(test1Func).to.have.been.calledWith('test1')
-    expect(test2Func).to.have.been.calledWith('test2="my value"', 'my value')
+    expect(test1Func).to.have.been.calledWith("test1")
+    expect(test2Func).to.have.been.calledWith('test2="my value"', "my value")
   })
 
-  it('should work with fragments', () => {
-    const infoString = 'test3'
+  it("should work with fragments", () => {
+    const infoString = "test3"
     const config = new Config()
-    config.addInfoStringParser(/test3/, function (match) {
-      this.element.id = 'id1232124'
+    config.addInfoStringParser(/test3/, function(match) {
+      this.element.id = "id1232124"
     })
     const fragment = new Fragment()
 
     config.parseInfoString(infoString, fragment)
-    expect(fragment.render())
-      .to.have.selector('div[id="id1232124"]')
+    expect(fragment.render()).to.have.selector('div[id="id1232124"]')
   })
 })
 
-describe('Pluings', () => {
-  it('should load plugins', () => {
-    const testFunction = function (pi) {
-      return 'Plugin loaded'
+describe("Pluings", () => {
+  it("should load plugins", () => {
+    const testFunction = function(pi) {
+      return "Plugin loaded"
     }
-    const plugin = function (config) {
-      config.commands['plugintest'] = testFunction
+    const plugin = function(config) {
+      config.commands["plugintest"] = testFunction
     }
     const config = new Config()
     config.use(plugin)
