@@ -1,8 +1,8 @@
-const {Document} = require('../..')
-const plugin = require('.')
+const { Document } = require("../..")
+const plugin = require(".")
 
-describe('Info strings', () => {
-  it('should add an HTML preview to the example', () => {
+describe("Info strings", () => {
+  it("should add an HTML preview to the example", () => {
     const input = unindent`
       ~~~ html +preview
       <p>Example</p>
@@ -13,7 +13,7 @@ describe('Info strings', () => {
     const html = doc.render()
 
     expect(html)
-      .to.have.selector('.pimd-example > .pimd-preview > p')
-      .with.text.to.equal('Example')
+      .to.have.selector(".pimd-example > .pimd-preview > p")
+      .with.text.to.equal("Example")
   })
 })

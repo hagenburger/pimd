@@ -1,5 +1,15 @@
 {
-  "extends": "standard",
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "semi": ["error", "never"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "env": {
+    "es6": true
+  },
   "overrides": [
     {
       "files": ["*.test.js", "test.js"],

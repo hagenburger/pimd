@@ -1,4 +1,4 @@
-const Document = require('./lib/document')
+const Document = require("./lib/document")
 
 module.exports = {
   Document: Document
