@@ -9,7 +9,7 @@ describe('Rendering of fragments', () => {
 
   it('should use template of child class', () => {
     const Child = class Child extends Fragment {
-      static get template () {
+      static get template() {
         return '<p class="test"></p>'
       }
     }
@@ -29,7 +29,7 @@ describe('Rendering of fragments', () => {
 describe('Instance hooks', () => {
   it('should execute beforeRender hook', () => {
     const fragment = new Fragment()
-    fragment.addHook('beforeRender', function () {
+    fragment.addHook('beforeRender', function() {
       this.element.textContent = 'Hook'
     })
     const html = fragment.render()
@@ -40,7 +40,7 @@ describe('Instance hooks', () => {
 
   it('should execute afterRender hook', () => {
     const fragment = new Fragment()
-    fragment.addHook('afterRender', function () {
+    fragment.addHook('afterRender', function() {
       this.outerHTML = '<p>Hook</p>'
     })
     const html = fragment.render()
@@ -53,7 +53,7 @@ describe('Instance hooks', () => {
 describe('Class hooks', () => {
   it('should execute beforeRender hook', () => {
     const FragmentClone = class FragmentClone extends Fragment {}
-    FragmentClone.addHook('beforeRender', function () {
+    FragmentClone.addHook('beforeRender', function() {
       this.element.textContent = 'Class hook'
     })
     const fragment = new FragmentClone()
@@ -65,7 +65,7 @@ describe('Class hooks', () => {
 
   it('should execute afterRender hook', () => {
     const FragmentClone = class FragmentClone extends Fragment {}
-    FragmentClone.addHook('afterRender', function () {
+    FragmentClone.addHook('afterRender', function() {
       this.outerHTML = '<p>Class hook</p>'
     })
     const fragment = new FragmentClone()

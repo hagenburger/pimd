@@ -2,18 +2,15 @@
 
 Adds a preview (live HTML) to code blocks.
 
-
 ## Example usage
 
-```` markdown
-``` html +preview
+````markdown
+```html +preview
 <p>Example</p>
 ```
 ````
 
-
 ---
-
 
 ## Copyright
 

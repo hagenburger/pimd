@@ -1,4 +1,4 @@
-const {Document} = require('../..')
+const { Document } = require('../..')
 const plugin = require('.')
 
 describe('Info strings', () => {
@@ -9,8 +9,7 @@ describe('Info strings', () => {
     const doc = new Document(input)
     doc.config.use(plugin)
     const html = doc.render()
-    expect(html)
-      .to.have.selector('h1.my-class')
+    expect(html).to.have.selector('h1.my-class')
   })
 
   it('should add multiple classes to a paragraph', () => {
@@ -20,8 +19,7 @@ describe('Info strings', () => {
     const doc = new Document(input)
     doc.config.use(plugin)
     const html = doc.render()
-    expect(html)
-      .to.have.selector('p.my-class.my-second-class')
+    expect(html).to.have.selector('p.my-class.my-second-class')
   })
 
   it('should add a class to a code block', () => {
@@ -33,7 +31,6 @@ describe('Info strings', () => {
     const doc = new Document(input)
     doc.config.use(plugin)
     const html = doc.render()
-    expect(html)
-      .to.have.selector('div.my-class')
+    expect(html).to.have.selector('div.my-class')
   })
 })
