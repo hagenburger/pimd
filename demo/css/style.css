@@ -32,14 +32,14 @@ p {
     width: 100%;
 }
 #markdownInput {
-    background-color: peachpuff;
+    background-color: #f0f0f0;
     text-align: center;
     width: 600px;
     position: relative;
     overflow-y: scroll;
 }
 #inputParsed {
-    background-color: gold;
+    background-color: f0f0f0;
     width: 600px;
     height: 600px;
     padding: 1%;
