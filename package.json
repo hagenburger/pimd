@@ -1,45 +1,19 @@
 {
-  "name": "pimd",
-  "version": "0.1.0",
-  "description": "Processing instructions for Markdown",
-  "main": "index.js",
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulp.js",
   "scripts": {
-    "lint": "eslint .",
-    "test": "mocha ./test/*.test.js ./test/**/*.test.js ./plugins/*/test.js --require ./test/setup"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "repository": "git@github.com:livingstyleguide/pimd.git"
-  },
-  "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
-  "keywords": [
-    "markdown",
-    "parser",
-    "markdown-it",
-    "documentation",
-    "docs",
-    "styleguide",
-    "livingstyleguide",
-    "designsystem",
-    "generator"
-  ],
-  "license": "MIT",
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "eslint": "^5.2.0",
-    "eslint-config-standard": "^12.0.0-alpha.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^6.0.0",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "lerna": "^2.11.0",
-    "mocha": "^5.0.4",
-    "sinon": "^6.0.0",
-    "sinon-chai": "^3.1.0"
-  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "jsdom": "^11.10.0",
-    "lint": "^1.1.2",
-    "markdown-it": "^8.4.1"
+    "pimd": "file:.."
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bro": "^1.0.3",
+    "gulp-connect": "^5.5.0"
   }
 }

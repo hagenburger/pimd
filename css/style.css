@@ -1,0 +1,68 @@
+
+    html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
+
+    h1 {
+        font-family: "Gubia", "helvetica neue", helvetica, arial, sans-serif;
+        font-weight: 400;
+        font-size: 48px;
+        color: #2ef1bd;
+    }
+
+    h2 {
+        font-family: "Gubia", "helvetica neue", helvetica, arial, sans-serif;
+        font-weight: 400;
+        font-size: 36px;
+        color: #2ef1bd;
+    }
+
+    p {
+        font-family: "source sans pro", arial, helvetica, sans-serif;
+        font-weight: 200;
+        font-size: 18px;
+        color: black;
+        line-height: 60px;
+    }
+
+    #container {    
+        margin: 0;
+    }
+
+    #parserDiv {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #markdownInput {
+        background-color: peachpuff;
+    text-align: center;
+        width: 600px;
+        position: relative;
+        overflow-y: scroll;
+    }
+
+    #inputParsed {
+        background-color: gold;
+        width: 600px;
+        height: 600px;
+        padding: 1%;
+        position: relative;
+        overflow-y: scroll;
+    }
+
+    #myInput {
+        width: 500px;
+        height: 500px;
+    }
+
+    #intro {
+        text-align: center;
+        padding: 1%;
+    }
+
+    
