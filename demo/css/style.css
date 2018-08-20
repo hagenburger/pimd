@@ -1,46 +1,68 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
 
-h1 {
-    font-family: "Gubia", "helvetica neue", helvetica, arial, sans-serif;
-    font-weight: 400;
-    font-size: 48px;
-    color: #2ef1bd;
-}
+    html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
 
-p {
-    font-family: "source sans pro", arial, helvetica, sans-serif;
-    font-weight: 200;
-    font-size: 18px;
-    color: black;
-}
+    h1 {
+        font-family: "Gubia", "helvetica neue", helvetica, arial, sans-serif;
+        font-weight: 400;
+        font-size: 48px;
+        color: #2ef1bd;
+    }
 
-#container {
-    display: flex;  
-    margin: 0;
-}
+    h2 {
+        font-family: "Gubia", "helvetica neue", helvetica, arial, sans-serif;
+        font-weight: 400;
+        font-size: 36px;
+        color: #2ef1bd;
+    }
 
-#parserDiv {
-    flex-flow: row nowrap;
-    justify-content: center;
-    display: flex;
-    width: 100%;
-}
+    p {
+        font-family: "source sans pro", arial, helvetica, sans-serif;
+        font-weight: 200;
+        font-size: 18px;
+        color: black;
+        line-height: 60px;
+    }
 
-#markdownInput {
-    background-color: grey;
-    width: 45%;
-}
+    #container {    
+        margin: 0;
+    }
 
-#renderedMarkdown {
-    background-color: peachpuff;
-    width: 45%;
-}
+    #parserDiv {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        width: 100%;
+    }
 
-#myInput {
-    width: 80%;
-    height: 500px;
-    margin: 5%;
-}
+    #markdownInput {
+        background-color: peachpuff;
+    text-align: center;
+        width: 600px;
+        position: relative;
+        overflow-y: scroll;
+    }
+
+    #inputParsed {
+        background-color: gold;
+        width: 600px;
+        height: 600px;
+        padding: 1%;
+        position: relative;
+        overflow-y: scroll;
+    }
+
+    #myInput {
+        width: 500px;
+        height: 500px;
+    }
+
+    #intro {
+        text-align: center;
+        padding: 1%;
+    }
+
+    
