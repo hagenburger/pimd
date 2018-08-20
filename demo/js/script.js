@@ -1,5 +1,12 @@
 var { Document } = require('pimd');
 
+const mdInput = document.getElementById("markdownInput");
+window.onload = function (){
+    mdInput.innerHTML = `# Try out the PIMD project
+    All of the source code is completely free and open, available on GitHub under MIT licence. We are porting from Ruby to Javascript (see our Collaboration section for more info on how to help).
+    `;
+};
+
 const userInput = document.getElementById("myInput");
 userInput.addEventListener('input',  function(e) {
     e.preventDefault();
@@ -14,3 +21,4 @@ function convertWithPimd(contentString) {
     let placer = document.getElementById("inputParsed");
     placer.innerHTML = renderedString;
 };
+

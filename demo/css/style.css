@@ -3,6 +3,20 @@ html, body {
     margin: 0;
 }
 
+h1 {
+    font-family: "Gubia", "helvetica neue", helvetica, arial, sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    color: #2ef1bd;
+}
+
+p {
+    font-family: "source sans pro", arial, helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 18px;
+    color: black;
+}
+
 #container {
     display: flex;  
     margin: 0;
@@ -12,14 +26,21 @@ html, body {
     flex-flow: row nowrap;
     justify-content: center;
     display: flex;
+    width: 100%;
 }
 
 #markdownInput {
     background-color: grey;
-    width: 30%;
+    width: 45%;
 }
 
 #renderedMarkdown {
     background-color: peachpuff;
-    width: 30%;
+    width: 45%;
+}
+
+#myInput {
+    width: 80%;
+    height: 500px;
+    margin: 5%;
 }
