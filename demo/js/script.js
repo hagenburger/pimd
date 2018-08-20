@@ -14,5 +14,4 @@ function convertWithPimd(contentString) {
     const renderedString = pimd.render();
     let placer = document.getElementById("inputParsed");
     placer.innerHTML = renderedString;
-};
-
+}
