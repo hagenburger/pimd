@@ -1,7 +1,7 @@
 {
-  "name": "@pimd/classes-plugin",
+  "name": "@pimd/preview-plugin",
   "version": "0.1.1",
-  "description": "Adds classes to HTML elements",
+  "description": "Adds a preview (live HTML) to code blocks.",
   "main": "index.js",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
   "keywords": [
