@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+   <head lang="en">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Hello!</title>
+      <link href="css/reset.css" type='text/css' rel="stylesheet" />
+      <link href="css/style.css" type='text/css' rel="stylesheet" />
+   </head>
+   <body>
+      <div id='container'>
+         <div id='intro'>
+            <h2>Try out the PIMD project</h2>
+            <p>All of the source code is completely free and open, available on GitHub under MIT licence. We are porting from Ruby to Javascript. <a href='https://github.com/livingstyleguide/' target="_blank">See our Github for more info.</a></p>
+         </div>
+         <div id='parserDiv'>
+            <div id='markdownInput'>
+               <p>Type below your markdown instructions.</p>
+               <form id="parseForm">
+                  <textarea type="text" id="myInput"></textarea>
+               </form>
+            </div>
+            <div id='inputParsed'></div>
+         </div>
+         <div id='rest'></div>
+      </div>
+   </body>
+   <script src='js_dist/script.js'></script>
+</html>
