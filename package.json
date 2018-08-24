@@ -4,7 +4,7 @@
   "description": "Processing instructions for Markdown",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint lib/*.js lib/**/*.js test/*.js test/**/*.js plugins/*/*.js",
     "test": "mocha ./test/*.test.js ./test/**/*.test.js ./plugins/*/test.js --require ./test/setup"
   },
   "repository": {
