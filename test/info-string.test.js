@@ -53,9 +53,20 @@ describe('Info strings', () => {
 
   it('should parse various filenames', () => {
     const tests = [
-      'test.js', 'test2.js', 'test_3.js', 'test-4.js', 'test.5.js', 'TEST6.js',
-      'te/st7.js', '.test9', 'test10.c', '11.test.js', 'test12.sketch',
-      'test13.123', 'test14.ABC', '~/test.15'
+      'test.js',
+      'test2.js',
+      'test_3.js',
+      'test-4.js',
+      'test.5.js',
+      'TEST6.js',
+      'te/st7.js',
+      '.test9',
+      'test10.c',
+      '11.test.js',
+      'test12.sketch',
+      'test13.123',
+      'test14.ABC',
+      '~/test.15',
     ]
     tests.forEach((test) => {
       let infoString = new InfoString(test)

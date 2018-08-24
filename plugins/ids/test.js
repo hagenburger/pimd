@@ -1,4 +1,4 @@
-const {Document} = require('../..')
+const { Document } = require('../..')
 const plugin = require('.')
 
 describe('Info strings', () => {
@@ -9,8 +9,7 @@ describe('Info strings', () => {
     const doc = new Document(input)
     doc.config.use(plugin)
     const html = doc.render()
-    expect(html)
-      .to.have.selector('h1#myid')
+    expect(html).to.have.selector('h1#myid')
   })
 
   it('should add an ID to a code block', () => {
@@ -22,8 +21,7 @@ describe('Info strings', () => {
     const doc = new Document(input)
     doc.config.use(plugin)
     const html = doc.render()
-    expect(html)
-      .to.have.selector('div#myid')
+    expect(html).to.have.selector('div#myid')
   })
 
   it('should add an ID to a table', () => {
@@ -35,7 +33,6 @@ describe('Info strings', () => {
     const doc = new Document(input)
     doc.config.use(plugin)
     const html = doc.render()
-    expect(html)
-      .to.have.selector('p#td-id')
+    expect(html).to.have.selector('p#td-id')
   })
 })

@@ -19,23 +19,22 @@ describe('Info strings', () => {
   it('should work with fragments', () => {
     const infoString = 'test3'
     const config = new Config()
-    config.addInfoStringParser(/test3/, function (match) {
+    config.addInfoStringParser(/test3/, function(match) {
       this.element.id = 'id1232124'
     })
     const fragment = new Fragment()
 
     config.parseInfoString(infoString, fragment)
-    expect(fragment.render())
-      .to.have.selector('div[id="id1232124"]')
+    expect(fragment.render()).to.have.selector('div[id="id1232124"]')
   })
 })
 
 describe('Pluings', () => {
   it('should load plugins', () => {
-    const testFunction = function (pi) {
+    const testFunction = function(pi) {
       return 'Plugin loaded'
     }
-    const plugin = function (config) {
+    const plugin = function(config) {
       config.commands['plugintest'] = testFunction
     }
     const config = new Config()

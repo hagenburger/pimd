@@ -31,14 +31,12 @@ describe('Rendering of example blocks', () => {
   it('should use a custom lang prefix', () => {
     const code = new Example({}, { langPrefix: 'langlang-' }, 'My code', 'text')
     const html = code.render()
-    expect(html)
-      .to.have.selector('.pimd-example .pimd-code pre > code.langlang-text')
+    expect(html).to.have.selector('.pimd-example .pimd-code pre > code.langlang-text')
   })
 
   it('should ignore lang prefix', () => {
     const code = new Example({}, { langPrefix: undefined }, 'My code', 'text')
     const html = code.render()
-    expect(html)
-      .to.have.selector('.pimd-example .pimd-code pre > code.text')
+    expect(html).to.have.selector('.pimd-example .pimd-code pre > code.text')
   })
 })

@@ -24,9 +24,12 @@ describe('Storing contents', () => {
   it('should accept promises', (done) => {
     const contents = new Contents()
     contents.add('css', 'p { color: green; }')
-    contents.add('css', new Promise((resolve, reject) => {
-      resolve('h1 { font-weight: bold }')
-    }))
+    contents.add(
+      'css',
+      new Promise((resolve, reject) => {
+        resolve('h1 { font-weight: bold }')
+      })
+    )
     contents.get('css').then((css) => {
       expect(css).to.include('p { color: green; }')
       expect(css).to.include('h1 { font-weight: bold }')
