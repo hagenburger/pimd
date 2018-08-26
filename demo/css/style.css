@@ -25,28 +25,28 @@ p {
 #container {
     margin: 0;
 }
-#parserDiv {
+#parser-div {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     width: 100%;
 }
-#markdownInput {
+#markdown-input {
     background-color: #f0f0f0;
     text-align: center;
     width: 600px;
     position: relative;
     overflow-y: scroll;
 }
-#inputParsed {
-    background-color: f0f0f0;
+#input-parsed {
+    background-color: #f0f0f0;
     width: 600px;
     height: 600px;
     padding: 1%;
     position: relative;
     overflow-y: scroll;
 }
-#myInput {
+#my-input {
     width: 500px;
     height: 500px;
 }
