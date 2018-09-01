@@ -157,6 +157,41 @@ describe("Options", () => {
   })
 })
 
+describe("Hooks", () => {
+  it("should run hooks", () => {
+    const input = unindent`
+      ~~~
+      test
+      ~~~
+    `
+    let doc = new Document(input)
+    doc.hooks.add("example:beforeRender", "replace-with-h1", function(example) {
+      example.dom.innerHTML = "<h1>"
+    })
+
+    let html = doc.render()
+    expect(html).to.have.selector("h1")
+  })
+
+  it("should run hooks defined in Config", () => {
+    const input = unindent`
+      ~~~
+      test
+      ~~~
+    `
+    const config = new Config()
+    config.hooks.add("example:beforeRender", "replace-with-h1", function(
+      example
+    ) {
+      example.dom.innerHTML = "<h1>"
+    })
+    let doc = new Document(input, config)
+
+    let html = doc.render()
+    expect(html).to.have.selector("h1")
+  })
+})
+
 describe("Processing instructions", () => {
   it("should not output anything for empty processing instructions", () => {
     const input = unindent`

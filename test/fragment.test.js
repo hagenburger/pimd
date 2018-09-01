@@ -29,8 +29,8 @@ describe("Rendering of fragments", () => {
 describe("Instance hooks", () => {
   it("should execute beforeRender hook", () => {
     const fragment = new Fragment()
-    fragment.addHook("beforeRender", function() {
-      this.element.textContent = "Hook"
+    fragment.hooks.add("node:beforeRender", "test", function(context) {
+      context.element.textContent = "Hook"
     })
     const html = fragment.render()
     expect(html)
@@ -40,38 +40,12 @@ describe("Instance hooks", () => {
 
   it("should execute afterRender hook", () => {
     const fragment = new Fragment()
-    fragment.addHook("afterRender", function() {
-      this.outerHTML = "<p>Hook</p>"
+    fragment.hooks.add("node:afterRender", "test", function() {
+      return "<p>Hook</p>"
     })
     const html = fragment.render()
     expect(html)
       .to.have.selector("p")
       .with.text.to.equal("Hook")
-  })
-})
-
-describe("Class hooks", () => {
-  it("should execute beforeRender hook", () => {
-    const FragmentClone = class FragmentClone extends Fragment {}
-    FragmentClone.addHook("beforeRender", function() {
-      this.element.textContent = "Class hook"
-    })
-    const fragment = new FragmentClone()
-    const html = fragment.render()
-    expect(html)
-      .to.have.selector("div")
-      .with.text.to.equal("Class hook")
-  })
-
-  it("should execute afterRender hook", () => {
-    const FragmentClone = class FragmentClone extends Fragment {}
-    FragmentClone.addHook("afterRender", function() {
-      this.outerHTML = "<p>Class hook</p>"
-    })
-    const fragment = new FragmentClone()
-    const html = fragment.render()
-    expect(html)
-      .to.have.selector("p")
-      .with.text.to.equal("Class hook")
   })
 })
