@@ -14,6 +14,45 @@ describe("Rendering documents", () => {
   })
 })
 
+describe("Render hooks", () => {
+  it("should modify the document before rendering", done => {
+    const input = unindent`
+      # Hello world
+    `
+    const doc = new Document(input)
+    doc.hooks.add("beforeRenderDocument", "add-useless-h2", function(renderer) {
+      const document = renderer.dom.window.document
+      const h1 = document.querySelector("h1")
+      const h2 = document.createElement("h2")
+      h2.textContent = "Goodbye"
+      h1.parentNode.appendChild(h2)
+    })
+    const html = doc.renderDocument().then(html => {
+      expect(html)
+        .to.have.selector("h1 + h2")
+        .with.text.to.equal("Goodbye")
+      done()
+    })
+  })
+
+  it("should modify the document after rendering", done => {
+    const input = unindent`
+      # Hello world
+    `
+    const doc = new Document(input)
+    doc.hooks.add("afterRenderDocument", "replace-everything", function(
+      renderer,
+      html
+    ) {
+      return "<html>Nothing</html>"
+    })
+    const html = doc.renderDocument().then(html => {
+      expect(html).to.equal("<html>Nothing</html>")
+      done()
+    })
+  })
+})
+
 describe("Meta information", () => {
   it("should use the first headline as the title", () => {
     const input = unindent`
