@@ -1,4 +1,5 @@
 const Example = require("../../lib/renderer/example")
+const Config = require("../../lib/config")
 
 describe("Rendering of example blocks", () => {
   it("should render", () => {
@@ -18,6 +19,18 @@ describe("Rendering of example blocks", () => {
     expect(html)
       .to.have.selector("code")
       .with.innerHTML.to.equal("&lt;p&gt;My code&lt;/p&gt;")
+  })
+
+  it("should highlight code", () => {
+    const config = new Config()
+    // A very basic syntax highlighter that highlights true/false only:
+    config.highlight = (code, lang) =>
+      code.replace(/(true|false)/g, "<b>$1</b>")
+    const code = new Example({ config: config }, {}, "if (true) return", "text")
+    const html = code.render()
+    expect(html)
+      .to.have.selector("code")
+      .with.innerHTML.to.equal("if (<b>true</b>) return")
   })
 
   it("should render with class names", () => {
