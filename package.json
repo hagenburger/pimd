@@ -9,8 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "repository": "git@github.com:livingstyleguide/pimd.git"
+    "repository": "github:hagenburger/pimd"
   },
+  "bugs": {
+    "url": "https://github.com/hagenburger/pimd/issues"
+  },
+  "homepage": "https://github.com/hagenburger/pimd#readme",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
   "keywords": [
     "markdown",
