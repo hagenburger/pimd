@@ -4,7 +4,7 @@ const connect = require("gulp-connect")
 gulp.task("connect", function() {
   connect.server()
 })
-gulp.task("default", ["build","connect"])
+gulp.task("default", ["build", "connect"])
 
 var bro = require("gulp-bro")
 gulp.task("build", () =>
