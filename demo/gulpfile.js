@@ -1,12 +1,11 @@
 const gulp = require("gulp")
 const connect = require("gulp-connect")
 const bro = require("gulp-bro")
-const runSequence = require("run-sequence");
+const runSequence = require("run-sequence")
 
-gulp.task('default', function(callback){
+gulp.task("default", function(callback) {
   runSequence("build",
-              "connect",
-              callback);
+              "connect", callback)
 })
 
 gulp.task("connect", function() {
