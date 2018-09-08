@@ -4,8 +4,7 @@ const bro = require("gulp-bro")
 const runSequence = require("run-sequence")
 
 gulp.task("default", function(callback) {
-  runSequence("build",
-              "connect", callback)
+  runSequence("build", "connect", callback)
 })
 
 gulp.task("connect", function() {
