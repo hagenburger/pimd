@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "gulp.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Violeta R ArtNerdNet <artnerdnet@gmail.com> (https://twitter.com/artnerdnet)",
   "license": "MIT",
   "dependencies": {
@@ -14,6 +13,7 @@
     "gulp": "^3.9.1",
     "gulp-bro": "^1.0.3",
     "gulp-connect": "^5.5.0",
-    "gulp-sequence": "^1.0.0"
+    "gulp-sequence": "^1.0.0",
+    "run-sequence": "^2.2.1"
   }
 }
