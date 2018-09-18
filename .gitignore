@@ -1,5 +1,6 @@
 ### Packages ###
 node_modules
+js_dist/
 
 ### Logs ###
 lerna-debug.log
