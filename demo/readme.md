@@ -24,7 +24,7 @@ You can use the Live Demo online or you can download it to your computer. If you
 npm install
 ```
 
-If you don’t have gulp installed globally, run:
+If you don’t have Gulp installed globally, run:
 
 ```
 npm install --global gulp-cli
