@@ -3,7 +3,6 @@ const highlightPlugin = function(config) {
     "highlight",
     { types: ["regexp", "string"], multiple: true },
     function(...rules) {
-      this.insertions = this.insertions || []
       rules.forEach((rule, i) => {
         this.content.replace(rule, (match, offset) => {
           this.insertAt(
