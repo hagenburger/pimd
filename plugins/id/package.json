@@ -1,6 +1,6 @@
 {
   "name": "@pimd/id-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Adds an ID to HTML elements",
   "main": "index.js",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "pimd": "^0.2.0"
+    "pimd": "^0.3.0"
   },
   "dependencies": {
     "lint": "^1.1.2"

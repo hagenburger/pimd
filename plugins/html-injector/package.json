@@ -1,6 +1,6 @@
 {
   "name": "@pimd/html-injector-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Helper for injecting HTML into syntax-highlighted examples",
   "main": "index.js",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",

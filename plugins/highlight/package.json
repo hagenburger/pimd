@@ -1,6 +1,6 @@
 {
   "name": "@pimd/highlight-plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Highlights important parts of code examples",
   "main": "index.js",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "pimd": "^0.2.0"
+    "pimd": "^0.3.0"
   },
   "peerDependencies": {
     "@pimd/html-injector-plugin": "^0.1.0"
