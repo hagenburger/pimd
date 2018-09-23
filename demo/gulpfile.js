@@ -2,6 +2,7 @@ const gulp = require("gulp")
 const connect = require("gulp-connect")
 const bro = require("gulp-bro")
 const runSequence = require("run-sequence")
+const deploy = require('gh-pages');
 
 gulp.task("default", function(callback) {
   runSequence("build", "connect", callback)
