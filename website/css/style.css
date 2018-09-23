@@ -9,7 +9,11 @@
      min-height: calc(100vh - 40vh);
    }
    nav {
-       overflow-x: scroll;
+       overflow-y: scroll;
+   }
+   nav > ul {
+     list-style-type: none;
+     padding: 1em;
    }
    #main > article {
      flex: 1;
@@ -25,7 +29,42 @@
    header, footer, article, nav, aside {
      padding: 1em;
    }
+   header {
+    display: flex;
+    background: orangered;
+    color: white;
+    border-radius: 3px;
+    padding: 1em;
+    font-family: sans-serif;
+  }
+  header > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex: 3;
+  }
+  header li {
+    margin-right: 1em;
+  }
+  header > form {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  header input {
+    flex: 1;
+  }
+  header button {
+    background: white;
+    border: 0;
+    border-radius: 1em;
+    color: orangered;
+    padding: 0 1em;
+    margin-left: .3em;
+  }
+
    header, footer {
      background: yellowgreen;
-     height: 20vh;
+     height: 5vh;
    }
