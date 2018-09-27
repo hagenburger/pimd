@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint lib/*.js lib/**/*.js test/*.js test/**/*.js plugins/*/*.js demo/gulpfile.js demo/js/*.js",
-    "test": "mocha ./test/*.test.js ./test/**/*.test.js ./plugins/*/test.js --require ./test/setup"
+    "test": "mocha ./test/*.test.js ./test/**/*.test.js ./plugins/*/test.js --require ./test/setup",
+    "plugin:npminstall": "./install_plugins_dependencies.sh"
   },
   "repository": {
     "type": "git",
