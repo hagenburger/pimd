@@ -4,7 +4,8 @@ const plugin = require(".")
 
 //TEST 1 [attribute = value]→ attribute = "value"
 describe("Attribute name and value", () => {
-  it("should add an attribute name and an attribute value, if value is not quote", () => {
+
+  it('should add an attribute name and an attribute value, if value is not quote', () => {
     // Arrange
     const attribute = unindent`
      some content <?: [align=right] ?>
@@ -20,7 +21,7 @@ describe("Attribute name and value", () => {
       .to.contain('align="right"')
   })
 
-//TEST 2 [attribute = "value"] quotation marks must be stripped → attribute = "value"  
+  //TEST 2 [attribute = "value"] quotation marks must be stripped → attribute = "value"  
   it('should add a value to an attribute when value is double quoted', () => {
     const attribute = unindent`
     some content <?: [align="right"] ?>
@@ -49,7 +50,7 @@ describe("Attribute name and value", () => {
    })
 
 //TEST 4 [attribute = '[value]'] quotation marks must be stripped → attribute = "[value]"
-  xit('should add a name and a value to an attribute', () => {
+  it('should add a name and a value to an attribute', () => {
     const attribute = unindent`
     some content <?: [align='[right]'] ?>
     `
@@ -76,3 +77,4 @@ describe("Attribute name and value", () => {
     .to.contain('align=[right]') 
   )
 })
+
