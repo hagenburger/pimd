@@ -5,9 +5,7 @@
   "main": "index.js",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
   "contributors": [
-    "Violeta R. <artnerdnet@gmail.com> (https://twitter.com/artnerdnet)",
-    "Diana Vile (https://github.com/dianavile)",
-    "Tobi (https://github.com/tobmaster)"
+    "Diana Vile (https://github.com/dianavile)"
   ],
   "keywords": [
     "markdown",
@@ -17,6 +15,9 @@
     "access": "public"
   },
   "license": "MIT",
+  "scripts": {
+    "test": "npm run test"
+  },
   "devDependencies": {
     "pimd": "^0.1.0"
   },

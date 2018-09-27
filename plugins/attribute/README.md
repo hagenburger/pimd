@@ -6,7 +6,7 @@
 
 ````markdown
 
-# Headline <?: #my-headline ?>
+# Headline <?: [title="Headline title"] ?>
 
 ```
 html [data-xyz=123]

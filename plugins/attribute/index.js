@@ -5,3 +5,4 @@ module.exports = function (config) {
     this.element.setAttribute(name, value)
   })
 }
+
