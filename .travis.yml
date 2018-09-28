@@ -4,7 +4,8 @@ node_js:
   - "8"
   - "9"
   - "10"
-script:
+install:
   - "npm run plugin:npminstall"
+script:
   - "npm run lint"
   - "npm test"
