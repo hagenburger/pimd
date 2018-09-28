@@ -1,0 +1,73 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Gubia", "helvetica neue", helvetica, arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 15px;
+}
+h1 {
+  font-size: 48px;
+  color: #2ef1bd;
+}
+h2 {
+  font-size: 36px;
+  color: #c6146d;
+}
+h3 {
+  font-size: 26px;
+  color: #dd3b76;
+}
+h4 {
+  font-size: 24px;
+  color: #eb96b0;
+}
+p {
+  font-family: "source sans pro", arial, helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  color: black;
+  line-height: 20px;
+}
+a {
+  text-decoration: underline;
+}
+#container {
+  margin: 0;
+}
+#parser-div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 100%;
+}
+#markdown-input {
+  background-color: #f0f0f0;
+  text-align: center;
+  width: 600px;
+  position: relative;
+  overflow-y: scroll;
+}
+#input-parsed {
+  background-color: #f0f0f0;
+  width: 600px;
+  height: 600px;
+  padding: 1%;
+  position: relative;
+  overflow-y: scroll;
+}
+#my-input {
+  width: 500px;
+  height: 500px;
+}
+#intro {
+  text-align: center;
+  padding: 1%;
+}

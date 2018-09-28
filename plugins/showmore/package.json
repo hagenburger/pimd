@@ -1,7 +1,7 @@
 {
-  "name": "@pimd/preview-plugin",
-  "version": "0.1.3",
-  "description": "Adds a preview (live HTML) to code blocks.",
+  "name": "@pimd/showmore-plugin",
+  "version": "0.1.0",
+  "description": "Hides non-relevant parts of code examples",
   "main": "index.js",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
   "keywords": [
@@ -13,6 +13,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "pimd": "^0.4.0"
+    "pimd": "^0.2.0"
+  },
+  "peerDependencies": {
+    "@pimd/html-injector-plugin": "^0.1.0"
   }
 }

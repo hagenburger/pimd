@@ -3,7 +3,7 @@ const Document = require('../../lib/document')
 const plugin = require(".")
 
 //TEST 1 [attribute = value]→ attribute = "value"
-describe("Attribute name and value", () => {
+describe("Attribute name and value", () => { 
 
   it('should add an attribute name and an attribute value, if value is not quote', () => {
     // Arrange
@@ -12,10 +12,10 @@ describe("Attribute name and value", () => {
     `
     const doc = new Document(attribute)
     doc.config.use(plugin)
-    
+
     // Act (execute)
     const html = doc.render()
-    
+
     //Assert
     expect(html)
       .to.contain('align="right"')
@@ -28,14 +28,14 @@ describe("Attribute name and value", () => {
     `
     const doc = new Document(attribute)
     doc.config.use(plugin)
-    
+
     const html = doc.render()
-    
+
     expect(html)
       .to.contain('align="right"')
-   })
+  })
 
-//TEST 3 [attribute = 'value'] quotation marks must be stripped → attribute = "value"
+  //TEST 3 [attribute = 'value'] quotation marks must be stripped → attribute = "value"
   it('should add a value to an attribute when value is single quoted', () => {
     const attribute = unindent`
     some content <?: [align='right'] ?>
@@ -47,34 +47,33 @@ describe("Attribute name and value", () => {
 
     expect(html)
       .to.contain('align="right"')
-   })
+  })
 
-//TEST 4 [attribute = '[value]'] quotation marks must be stripped → attribute = "[value]"
+  //TEST 4 [attribute = '[value]'] quotation marks must be stripped → attribute = "[value]"
   it('should add a name and a value to an attribute', () => {
     const attribute = unindent`
-    some content <?: [align='[right]'] ?>
+    some content  <?: [align='[right]'] ?>
     `
     const doc = new Document(attribute)
     doc.config.use(plugin)
-  
+
     const html = doc.render()
 
     expect(html)
-      .to.contain('align="[right]"')
+      .to.contain('align=\"[right]\"')
   }) 
 
-//TEST 5 [attribute] only the attribute name should be set → attribute
+  //TEST 5 [attribute] only the attribute name should be set → attribute
   it('should add only a name to an attribute', () => {
-  const attribute = unindent`
-  some content <?: [align=[right]] ?>
+    const attribute = unindent`
+  some content <?: [align] ?>
     `
-  const doc = new Document(attribute)
-  doc.config.use(plugin)
+    const doc = new Document(attribute)
+    doc.config.use(plugin)
 
-  const html = doc.render()
+    const html = doc.render()
 
-  expect(html)
-    .to.contain('align=[right]') 
-  )
+    expect(html)
+      .to.contain('align')
+  })
 })
-

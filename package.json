@@ -1,10 +1,10 @@
 {
   "name": "pimd",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description": "Processing instructions for Markdown",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint lib/*.js lib/**/*.js test/*.js test/**/*.js plugins/*/*.js",
+    "lint": "eslint lib/*.js lib/**/*.js test/*.js test/**/*.js plugins/*/*.js demo/gulpfile.js demo/js/*.js",
     "test": "mocha ./test/*.test.js ./test/**/*.test.js ./plugins/*/test.js --require ./test/setup"
   },
   "repository": {

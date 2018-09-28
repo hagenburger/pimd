@@ -1,7 +1,7 @@
 {
-  "name": "@pimd/preview-plugin",
-  "version": "0.1.3",
-  "description": "Adds a preview (live HTML) to code blocks.",
+  "name": "@pimd/html-injector-plugin",
+  "version": "0.1.1",
+  "description": "Helper for injecting HTML into syntax-highlighted examples",
   "main": "index.js",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
   "keywords": [
@@ -13,6 +13,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "pimd": "^0.4.0"
+    "pimd": "^0.1.0"
   }
 }
