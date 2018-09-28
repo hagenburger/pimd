@@ -4,7 +4,7 @@ node_js:
   - "8"
   - "9"
   - "10"
-install:
+before_script:
   - "npm run plugin:npminstall"
 script:
   - "npm run lint"
