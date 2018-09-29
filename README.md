@@ -29,14 +29,6 @@ of Code 2018]: Our team is @artnerdnet and @dianavile
 
 [railsgirls summer of code 2018]: https://railsgirlssummerofcode.org
 
-#### Documentation
-
-It’s part of the RailsGirls Summer of Code to
-[extend this Readme file](https://github.com/hagenburger/pimd/issues/12). This
-will be done when PIMD officially gets released. For now: **All functionality is
-documented in the tests** which you can find in the `tests` folder and `test.js`
-of each plugin found in `plugins/*`.
-
 ---
 
 ## Setup
