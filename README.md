@@ -192,6 +192,9 @@ Result:
 </div>
 ```
 
+Tip: Check out the source code of [PIMD’s official plugins](#plugins) for
+further inspiration.
+
 ---
 
 ## Coding style
