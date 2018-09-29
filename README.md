@@ -80,9 +80,24 @@ Result:
 
 ## Plugins
 
-- [Add classes to code blocks or other elements](https://github.com/hagenburger/pimd/tree/master/plugins/classes#readme)
-- [Add an ID to code blocks or other elements](https://github.com/hagenburger/pimd/tree/master/plugins/ids#readme)
-- [Add an HTML preview to code blocks](https://github.com/hagenburger/pimd/tree/master/plugins/preview#readme)
+Plugins unleash the full power of PIMD. The official plugins offer functionality
+to create living style guides and to improve code documentation in general.
+
+- [Classes](https://github.com/hagenburger/pimd/tree/master/plugins/classes#readme):
+  Add classes to code blocks or other elements for easy additional styling
+- [ID](https://github.com/hagenburger/pimd/tree/master/plugins/id#readme): Add
+  an ID to code blocks or other elements for easily accessing elements in the
+  HTML preview via JavaScript to bring code examples to live
+- [Preview](https://github.com/hagenburger/pimd/tree/master/plugins/preview#readme):
+  Add an HTML preview to code blocks for pattern libraries/living style guides
+- [Highlight](https://github.com/hagenburger/pimd/tree/master/plugins/highlight#readme):
+  Visually highlight important parts of code blocks in different background
+  colors
+- [Showmore](https://github.com/hagenburger/pimd/tree/master/plugins/showmore#readme):
+  Hide less important parts of code blocks
+- [HTML injector](https://github.com/hagenburger/pimd/tree/master/plugins/html-injector#readme):
+  a plugin to create new plugins that manipulate the code blocks (already used
+  by Highlight and Showmore)
 
 ## Extending
 
