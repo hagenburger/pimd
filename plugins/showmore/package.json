@@ -1,6 +1,6 @@
 {
   "name": "@pimd/showmore-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Hides non-relevant parts of code examples",
   "main": "index.js",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",

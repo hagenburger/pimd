@@ -1,6 +1,6 @@
 {
   "name": "pimd",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Processing instructions for Markdown",
   "main": "index.js",
   "scripts": {
