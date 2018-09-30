@@ -27,6 +27,21 @@ describe("Info strings", () => {
     config.parseInfoString(infoString, fragment)
     expect(fragment.render()).to.have.selector('div[id="id1232124"]')
   })
+
+  it("should not mix up info strings", () => {
+    // This test makes sure the periods between 1 and 2 won’t call test1Func
+    const infoString = "+showmoretest=34..56 .testclass"
+    const config = new Config()
+    const test1Func = sinon.spy()
+    const test2Func = sinon.spy()
+    config.addInfoStringParser(/\..+/, test1Func)
+    config.addInfoStringCommand("showmoretest", { types: ["range"] }, test2Func)
+
+    config.parseInfoString(infoString, {})
+
+    expect(test2Func).to.have.been.calledWith("34..56")
+    expect(test1Func).to.have.been.calledWith(".testclass")
+  })
 })
 
 describe("Info string commands", () => {
