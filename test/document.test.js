@@ -12,6 +12,32 @@ describe("Rendering documents", () => {
       .to.have.selector("h1")
       .with.text.to.equal("Test")
   })
+
+  it("should render inline HTML", () => {
+    const input = unindent`
+      <i>Test</i>
+    `
+    const doc = new Document(input)
+    const html = doc.render()
+    expect(html)
+      .to.have.selector("i")
+      .with.text.to.equal("Test")
+  })
+
+  it("should render stacked inline HTML", () => {
+    const input = unindent`
+      <i>T<b>es</b>t</i>
+    `
+    const doc = new Document(input)
+    const html = doc.render()
+
+    expect(html)
+      .to.have.selector("i")
+      .with.text.to.equal("Test")
+    expect(html)
+      .to.have.selector("b")
+      .with.text.to.equal("es")
+  })
 })
 
 describe("Render hooks", () => {
