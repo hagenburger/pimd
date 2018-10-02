@@ -7,9 +7,11 @@ understood by a human. Those extra code is noise and should be hidden.
 
 This plugin shows `···` instead of the noise and reveals the code on click.
 
+![Video preview of Showmore plugin](https://user-images.githubusercontent.com/103399/46336396-f7049980-c62a-11e8-94ec-9acdee8e858f.gif)
+
 ## Example usage
 
-````markdown +highlight=/\+showmore=[^\s]+/
+````markdown +highlight=/+showmore=[^\s]+/
 ```html +showmore=5..13
 <ul>
   <li class="my-list-item">
