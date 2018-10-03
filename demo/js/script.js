@@ -1,4 +1,5 @@
 var { Document } = require("pimd")
+const allincPlugin = require("@pimd/allinc-plugin")
 
 const userInput = document.getElementById("my-input")
 userInput.addEventListener("input", function(e) {
@@ -9,7 +10,10 @@ userInput.addEventListener("input", function(e) {
 
 function convertWithPimd(contentString) {
   const pimd = new Document(contentString)
+  pimd.config.use(allincPlugin)
   const renderedString = pimd.render()
   let placer = document.getElementById("input-parsed")
   placer.innerHTML = renderedString
 }
+
+convertWithPimd(defaultMarkdownSource)
