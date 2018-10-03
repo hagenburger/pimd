@@ -5,18 +5,20 @@
 ## Example usage
 
 ````markdown
-
 # Headline <?: [title="Headline title"] ?>
 
-```
-html [data-xyz=123]
+```html [data-xyz=123]
 <p>Example</p>
 ```
+````
 
-Results in:
+Results in: 
 
-``` html
-# Headline <?: [title="Headline title"] ?>
+```html
+<h1 title="Headline title">Headline</h1>
+
+<pre data-xyz="123" class="hljs language-html"><code><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Example<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
 ```
 
 ---
