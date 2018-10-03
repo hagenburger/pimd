@@ -19,7 +19,9 @@
     "@pimd/id-plugin": "0.1.4",
     "@pimd/preview-plugin": "0.1.5",
     "@pimd/prism-plugin": "0.1.1",
-    "@pimd/showmore-plugin": "0.1.1",
+    "@pimd/showmore-plugin": "0.1.1"
+  },
+  "devDependencies": {
     "pimd": "^0.5.0"
   }
 }
