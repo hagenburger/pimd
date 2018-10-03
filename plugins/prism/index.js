@@ -3,6 +3,7 @@ const loadLanguages = require("prismjs/components/")
 
 module.exports = function(config) {
   config.highlight = function(code, lang) {
+    if (!lang) return code
     if (Object.keys(Prism.languages).indexOf(lang) === -1) {
       loadLanguages([lang])
     }

@@ -29,4 +29,16 @@ describe("Prism plugin", () => {
       .to.have.selector("code span.token.punctuation")
       .with.text.to.equal("#")
   })
+
+  it("Don't highlight code without language specific", () => {
+    const input = unindent`
+      ~~~
+      <p>
+      ~~~
+    `
+    const doc = new Document(input)
+    doc.config.use(plugin)
+    const html = doc.render()
+    expect(html).to.not.have.selector("code span.token.punctuation")
+  })
 })
