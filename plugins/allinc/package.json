@@ -12,7 +12,7 @@
     "access": "public"
   },
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "@pimd/classes-plugin": "0.1.5",
     "@pimd/highlight-plugin": "0.1.3",
     "@pimd/html-injector-plugin": "0.1.1",
