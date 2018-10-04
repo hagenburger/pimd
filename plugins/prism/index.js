@@ -6,6 +6,7 @@ module.exports = function(config) {
     if (!lang) return code
     if (Object.keys(Prism.languages).indexOf(lang) === -1) {
       loadLanguages([lang])
+      if (Object.keys(Prism.languages).indexOf(lang) === -1) return code
     }
     return Prism.highlight(code, Prism.languages[lang])
   }

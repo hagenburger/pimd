@@ -30,7 +30,7 @@ describe("Prism plugin", () => {
       .with.text.to.equal("#")
   })
 
-  it("Don't highlight code without language specific", () => {
+  it("Don’t highlight code without language specific", () => {
     const input = unindent`
       ~~~
       <p>
@@ -39,6 +39,18 @@ describe("Prism plugin", () => {
     const doc = new Document(input)
     doc.config.use(plugin)
     const html = doc.render()
-    expect(html).to.not.have.selector("code span.token.punctuation")
+    expect(html).to.not.have.selector("code span.token")
+  })
+
+  it("Don’t highlight code with unsupported language", () => {
+    const input = unindent`
+      ~~~superjs
+      <p>
+      ~~~
+    `
+    const doc = new Document(input)
+    doc.config.use(plugin)
+    const html = doc.render()
+    expect(html).to.not.have.selector("code span.token")
   })
 })
