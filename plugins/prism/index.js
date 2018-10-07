@@ -1,3 +1,9 @@
+// Only run this when PIMD gets executed in a browser:
+if (typeof window !== "undefined") {
+  // Use PrismJS without changing the existing HTML in the browser:
+  window.Prism = { manual: true }
+}
+
 const Prism = require("prismjs")
 const loadLanguages = require("prismjs/components/")
 
