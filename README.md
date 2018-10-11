@@ -33,7 +33,7 @@ of Code 2018]: Our team is @artnerdnet and @dianavile
 
 ## Setup
 
-```bash
+```sh
 npm install --save pimd
 ```
 
@@ -41,24 +41,30 @@ npm install --save pimd
 
 ### Render inline
 
-```javascript
+```javascript +highlight=/#/,/Headline/
 const { Document } = require("pimd")
-const markdown = "# Headline"
+const markdown = `
+# Headline
+`
 const doc = new Document(markdown)
 console.log(doc.render())
 ```
 
 Result:
 
-```html
-<h1>Headline</h1>
+```html +highlight=/<\/?h1>/g,/Headline/
+<h1>
+  Headline
+</h1>
 ```
 
 ### Render document
 
-```javascript
+```javascript +highlight=/#/,/Headline/
 const { Document } = require("pimd")
-const markdown = "# Headline"
+const markdown = `
+# Headline
+`
 const doc = new Document(markdown)
 doc.renderDocument().then(html => {
   console.log(html)
@@ -67,13 +73,15 @@ doc.renderDocument().then(html => {
 
 Result:
 
-```html
+```html +highlight=/<\/?h1>/g,/Headline/
 <html>
   <head>
     <title>Headline</title>
   </head>
   <body>
-    <h1>Headline</h1>
+    <h1>
+      Headline
+    </h1>
   </body>
 </html>
 ```
@@ -95,6 +103,8 @@ to create living style guides and to improve code documentation in general.
   colors
 - [Showmore](https://github.com/hagenburger/pimd/tree/master/plugins/showmore#readme):
   Hide less important parts of code blocks
+- [Prism](https://github.com/hagenburger/pimd/tree/master/plugins/prism#readme):
+  Syntax highlighting with PrismJS
 - [HTML injector](https://github.com/hagenburger/pimd/tree/master/plugins/html-injector#readme):
   a plugin to create new plugins that manipulate the code blocks (already used
   by Highlight and Showmore)
@@ -104,23 +114,25 @@ to create living style guides and to improve code documentation in general.
 ### Output generated data with JavaScript
 
 PIMD extends Markdown with Processing Instructions known from XML. This is
-complient with the [CommonMark specs].
+compliant with the [CommonMark specs].
 
-```javascript
+```javascript +highlight=/year/g,/new Date\(\).getFullYear\(\)/
 const { Document } = require("pimd")
 const Config = require("pimd/lib/config")
-const markdown = "# Year <?year?>"
 
 const config = new Config()
 config.commands["year"] = () => new Date().getFullYear()
 
+const markdown = `
+# Year <?year?>
+`
 const doc = new Document(markdown, config)
 console.log(doc.render())
 ```
 
 Result:
 
-```html
+```html +highlight="_",/2018/
 <h1>Year 2018</h1>
 ```
 
@@ -128,23 +140,25 @@ Result:
 
 PIMD uses the [DOM] internally to provide a well-known API to its users.
 
-```javascript
+```javascript +highlight=/important/g,/background = "yellow"/,/style/,/element/g
 const { Document } = require("pimd")
 const Config = require("pimd/lib/config")
-const markdown = "# Headline <?important?>"
 
 const config = new Config()
-config.commands["date"] = context => {
+config.commands["important"] = context => {
   context.element.style.background = "yellow"
 }
 
+const markdown = `
+# Headline <?important?>
+`
 const doc = new Document(markdown, config)
 console.log(doc.render())
 ```
 
 Result:
 
-```html
+```html +highlight="_",/background: yellow/,/style/,/<h1|<\/h1>|>/g
 <h1 style="background: yellow">Headline</h1>
 ```
 
@@ -152,34 +166,33 @@ Result:
 
 ### Writing plugins
 
-```javascript
+```javascript +highlight=/info/g,/"Hello world!"|(?<!\.)text/g,/div/g,/element/g
 const { Document } = require("pimd")
 const Config = require("pimd/lib/config")
 
-const markdown = `
-~~~ html info="Hello world!"
-<p>Test</p>
-~~~
-`
-
 const myPlugin = function(config) {
-  config.addInfoStringParser(/info="(.+?)"/, function(match, string) {
-    const element = this.renderer.dom.window.document.createElement("div")
-    element.textContent = string
-    this.element.appendChild(element)
+  config.addInfoStringCommand("info", { types: ["string"] }, function(text) {
+    const div = this.renderer.dom.window.document.createElement("div")
+    div.textContent = text
+    this.element.appendChild(div)
   })
 }
 
 const config = new Config()
 config.use(myPlugin)
 
+const markdown = `
+~~~html +info="Hello world!"
+<p>Test</p>
+~~~
+`
 const doc = new Document(markdown, config)
 console.log(doc.render())
 ```
 
 Result:
 
-```html
+```html +highlight="_",/Hello world!/g,/<div>.+?<\/div>/g,/<div class="pimd-example">|^<\/div>/g
 <div class="pimd-example">
   <div class="pimd-code">
     <pre>

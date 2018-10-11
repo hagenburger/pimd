@@ -4,7 +4,7 @@ Adds HTML classes to code blocks and other elements.
 
 ## Example usage
 
-````markdown
+````markdown +highlight=".my-headline",".my-code",".my-paragraph"
 # Headline <?: .my-headline ?>
 
 ```html .my-code
@@ -16,7 +16,7 @@ Lorem ipsum dolor sit amet. <?: .my-paragraph ?>
 
 Results in:
 
-```html
+```html +highlight="class=\"my-headline\"","my-code","class=\"my-paragraph\""
 <h1 class="my-headline">Headline</h1>
 
 <div class="pimd-example my-code">
@@ -24,6 +24,33 @@ Results in:
 </div>
 
 <p class="my-paragraph">Lorem ipsum dolor sit amet.</p>
+```
+
+## Setup
+
+```sh
+npm i pimd @pimd/classes-plugin
+```
+
+```javascript +highlight=/classesPlugin/g,"require(\"@pimd/classes-plugin\")",/(?<!\/)config/g +showmore=1..2,9..15
+const { Document } = require("pimd")
+const Config = require("pimd/lib/config")
+const classesPlugin = require("@pimd/classes-plugin")
+
+const config = new Config()
+config.use(classesPlugin)
+
+const markdown = `
+# Headline <?: .my-headline ?>
+
+\`\`\`html .my-code
+<p>Example</p>
+\`\`\`
+
+Lorem ipsum dolor sit amet. <?: .my-paragraph ?>
+`
+const doc = new Document(markdown, config)
+console.log(doc.render())
 ```
 
 ---

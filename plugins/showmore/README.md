@@ -11,7 +11,7 @@ This plugin shows `···` instead of the noise and reveals the code on click.
 
 ## Example usage
 
-````markdown +highlight=/+showmore=[^\s]+/
+````markdown +highlight=/\+showmore=[^\s]+/
 ```html +showmore=5..13
 <ul>
   <li class="my-list-item">
@@ -38,13 +38,37 @@ Result:
 
 This requires the _HTML injector_ plugin to be loaded first:
 
-```javascript
-// ...
+```javascript +highlight=/showmorePlugin/g,"require(\"@pimd/showmore-plugin\")",/(?<!\/)config/g +showmore=1..2,11..26
+const { Document } = require("pimd")
+const Config = require("pimd/lib/config")
 const htmlInjector = require("@pimd/html-injector-plugin")
 const showmorePlugin = require("@pimd/showmore-plugin")
 
+const config = new Config()
 config.use(htmlInjector)
 config.use(showmorePlugin)
+
+const markdown = `
+\`\`\`html +showmore=5..13
+<ul>
+  <li class="my-list-item">
+    Item 1
+  </li>
+  <li class="my-list-item">
+    Item 2
+  </li>
+  <li class="my-list-item">
+    Item 3
+  </li>
+  <li class="my-list-item">
+    Item 4
+  </li>
+</ul>
+\`\`\`
+`
+const doc = new Document(markdown, config)
+const html = doc.render()
+console.log(html)
 ```
 
 ---
