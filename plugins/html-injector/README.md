@@ -10,52 +10,81 @@ syntax highlighted, it is hard to find the right offsets.
 
 This plugin translates offsets from before to after syntax highlighting.
 
-## Example
+## Manual example without this plugin
 
 Imagine you want to format the `x` in the following example in italics:
 
-```html
+```html +highlight=/x/g
 <p>Example</p>
 ```
 
-First the code gets HTML escaped:
+When you want to display HTML in HTML, `<` and `>` need to be escaped with
+`&lt;` and `&gt;` first and put into a `<pre>` and `<code>` block:
 
-```html
-&lt;p&gt;Example&lt;/p&gt;
+```html +highlight=/x/g
+<pre>
+  <code>
+    &lt;p&gt;Example&lt;/p&gt;
+  </code>
+</pre>
 ```
 
-Then you can insert the `<i>` and `</i>`:
+Afterwards you can insert the `<i>` and `</i>`:
 
-```html
-&lt;p&gt;E<i>x</i>ample&lt;/p&gt;
+```html +highlight=/x/g
+<pre>
+  <code>
+    &lt;p&gt;E<i>x</i>ample&lt;/p&gt;
+  </code>
+</pre>
 ```
 
-With syntax highlighting enabled, this simple example already gets quite
-complex:
+With syntax highlighting (for example with PrismJS) enabled, this simple right
+aboce example already gets quite complex:
 
-```html
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>E<i>x</i>ample<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+```html +highlight=/x/g
+<pre>
+  <code class="language-html">
+    <span class="token tag">
+      <span class="token tag">
+        <span class="token punctuation">&lt;</span>
+        p</span>
+      <span class="token punctuation">&gt;</span>
+    </span>
+    E<i>x</i>ample
+    <span class="token tag">
+      <span class="token tag">
+        <span class="token punctuation">&lt;/</span>
+        p
+      </span>
+      <span class="token punctuation">&gt;</span>
+    </span>
+  </code>
+</pre>
 ```
+
+For readability issues, all examples above got formatted and indented. In real
+life, this would be one line without whitespace.
 
 ## Usage
 
 With this plugin enabled, you only need to know the offset and what to insert:
 
-```javascript
+```javascript +highlight=/(?<!e)x/g,/4/g
 // Offsets before highlighting:
 // <p>Example</p>
 // 01234567890123
 example.insertAt(4, "<i>") // Before the `x`
-example.insertAt(5, "</i>") // After the `x`
+example.insertAt(4 + 1, "</i>") // After the `x`
 ```
 
 This is best put into a `example:beforeRender` hook:
 
-```javascript
+```javascript +highlight="example:beforeRender"
 const myPlugin = function(config) {
   config.hooks.add("example:beforeRender", "my-plugin", function(example) {
     example.insertAt(4, "<i>") // Before the `x`
-    example.insertAt(5, "</i>") // After the `x`
+    example.insertAt(4 + 1, "</i>") // After the `x`
   })
 }
 ```
@@ -94,6 +123,35 @@ Back to Markdown, the plugin can be used as simple as:
 <p>Example</p>
 ```
 ````
+
+## Setup
+
+To render the Markdown example right above, install this plugin:
+
+```sh
+npm i @pimd/html-injector-plugin
+```
+
+This requires the _HTML injector_ plugin to be loaded first:
+
+```javascript +highlight=/htmlInjectorPlugin/g,"require(\"@pimd/htmlInjector-plugin\")",/(?<!\/)config/g +showmore=1..2,10..12
+const { Document } = require("pimd")
+const Config = require("pimd/lib/config")
+const htmlInjectorPlugin = require("@pimd/html-injector-plugin")
+
+const config = new Config()
+config.use(htmlInjectorPlugin)
+config.use(myPlugin) // `myPlugin` as defined further up this page
+
+const markdown = `
+\`\`\`html italicx
+<p>Example</p>
+\`\`\`
+`
+const doc = new Document(markdown, config)
+const html = doc.render()
+console.log(html)
+```
 
 ---
 
