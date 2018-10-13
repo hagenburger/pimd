@@ -1,6 +1,6 @@
 const assert = require("assert")
 const File = require("vinyl")
-var gulpPimdPlugin = require(".")
+const gulpPimdPlugin = require(".")
 const eventStream = require("event-stream")
 
 const createFile = contents => {
@@ -11,7 +11,7 @@ const createFile = contents => {
 }
 
 describe("gulp-pimd", () => {
-  it("should render markdown if a buffer is provided.", function(done) {
+  it("should render Markdown if a buffer is provided", function(done) {
     const task = gulpPimdPlugin()
     task.write(createFile(Buffer.from("# Heading")))
     task.once("data", function(file) {
