@@ -1,0 +1,28 @@
+const through = require("through2")
+const PluginError = require("plugin-error")
+const { Document } = require("pimd")
+
+module.exports = options => {
+  return through.obj(function(file, enc, cb) {
+    if (file.isNull()) {
+      cb(null, file)
+      return
+    }
+
+    if (file.isStream()) {
+      cb(new PluginError("gulp-pimd", "Streaming not supported"))
+      return
+    }
+
+    try {
+      const doc = new Document(file.contents.toString(), options)
+      const renderedHtml = doc.render()
+      file.contents = Buffer.from(renderedHtml)
+      this.push(file)
+    } catch (err) {
+      this.emit("error", new PluginError("gulp-pimd", err))
+    }
+
+    cb()
+  })
+}
