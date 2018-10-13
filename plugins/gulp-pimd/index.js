@@ -3,14 +3,14 @@ const PluginError = require("plugin-error")
 const { Document } = require("pimd")
 
 module.exports = options => {
-  return through.obj(function(file, enc, cb) {
+  return through.obj(function(file, enc, callback) {
     if (file.isNull()) {
-      cb(null, file)
+      callback(null, file)
       return
     }
 
     if (file.isStream()) {
-      cb(new PluginError("gulp-pimd", "Streaming not supported"))
+      callback(new PluginError("gulp-pimd", "Streaming not supported"))
       return
     }
 
@@ -23,6 +23,6 @@ module.exports = options => {
       this.emit("error", new PluginError("gulp-pimd", err))
     }
 
-    cb()
+    callback()
   })
 }
