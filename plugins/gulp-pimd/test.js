@@ -20,7 +20,7 @@ describe("gulp-pimd", () => {
       done()
     })
   })
-  it("should pass over an empty file.", function(done) {
+  it("should pass over an empty file", function(done) {
     const task = gulpPimdPlugin()
     task.write(createFile(null))
     task.once("data", function(file) {
