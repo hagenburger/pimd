@@ -1,6 +1,6 @@
 {
   "name": "@pimd/prism-plugin",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Highlights code blocks using Prism",
   "main": "index.js",
   "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "pimd": "^0.5.0"
+    "pimd": "^0.6.0"
   },
   "dependencies": {
     "prismjs": "^1.15.0"
