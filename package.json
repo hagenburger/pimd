@@ -54,6 +54,6 @@
   },
   "dependencies": {
     "jsdom": "^13.0.0",
-    "markdown-it": "^8.4.2"
+    "markdown-it": "^9.1.0"
   }
 }
