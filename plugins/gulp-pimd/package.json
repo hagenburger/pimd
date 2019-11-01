@@ -1,0 +1,35 @@
+{
+  "name": "gulp-pimd",
+  "version": "0.0.0",
+  "description": "PIMD Gulp Plugin",
+  "license": "MIT",
+  "repository": "artnerdnet/pimd/plugins/gulp-pimd/",
+  "author": "Nico Hagenburger <nico@hagenburger.net> (https://twitter.com/hagenburger)",
+  "contributors": [
+    "Violeta <artnerdnet@gmail.com> (https://twitter.com/artnerdnet)",
+    "Tobias (https://github.com/tobmaster)",
+    "Bright (htts://github.com/benevbright)"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "pimd",
+    "livingstyleguide"
+  ],
+  "dependencies": {
+    "pimd": "^0.2.0",
+    "through2": "^2.0.0",
+    "plugin-error": "^1.0.1"
+  },
+  "devDependencies": {
+    "event-stream": "^4.0.0",
+    "p-event": "^2.1.0",
+    "vinyl": "^2.1.0",
+    "xo": "*"
+  }
+}
